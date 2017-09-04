@@ -3,6 +3,7 @@
 def test(message, indices):
     msglst = message.replace(',', '').replace('.', '').split(' ')
     inlst = list(map(lambda x: x-1, indices))
+    dic = {}
     for i, message in enumerate(msglst):
         dic[i+1] = i in inlst and message[:1:] or message[:2:]
 
