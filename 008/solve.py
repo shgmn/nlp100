@@ -1,11 +1,9 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-import re
 
 
 def cipher(message):
-    lowerReg = re.compile(r'^[a-z]+$')
-    ciphered_message = ''.join(map(lambda x: chr(219 - ord(x)) if lowerReg.match(x) else x, message))
+    ciphered_message = ''.join(map(lambda x: chr(219 - ord(x)) if x.islower() else x, message))
     return ciphered_message
 
 
