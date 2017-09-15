@@ -5,7 +5,7 @@ import random
 
 def typoglycemia(message):
     shuffle = lambda x: ''.join(random.sample(x ,len(x)))
-    result = ' '.join(map(lambda x: x[0:1] + shuffle(x[1:len(x)-1]) + x[len(x)-1:len(x)] if len(x) > 4 else x, message.split(' ')))
+    result = ' '.join(map(lambda x: x[0] + shuffle(x[1:len(x)-1]) + x[-1] if len(x) > 4 else x, message.split(' ')))
     return result
 
 
